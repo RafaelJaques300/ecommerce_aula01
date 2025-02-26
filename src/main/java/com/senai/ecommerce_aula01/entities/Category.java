@@ -4,13 +4,14 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
 @Entity
 @Table(name = "tb_category")
 
-public class Category {
+public class    Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -18,5 +19,5 @@ public class Category {
     private String name;
 
     @ManyToMany(mappedBy = "categories")
-    private Set<Product> products = new HashSet<>();
+    private List<Product> products;
 }
