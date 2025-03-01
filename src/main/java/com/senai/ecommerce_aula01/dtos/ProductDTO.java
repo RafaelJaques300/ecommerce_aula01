@@ -32,9 +32,6 @@ public class ProductDTO {
     public ProductDTO(Long id, String name, String description, double price, String imgUrl, Set<CategoryDTO> categories) {
 }
 
-    public ProductDTO(Long id, String name, String description, double price, String imgUrl) {
-    }
-
     public void setCategories(List<CategoryDTO> categories) {
         this.categories = categories.stream().map(
                 category ->
@@ -43,6 +40,7 @@ public class ProductDTO {
     }
     public @NotEmpty(message = "O campo categoria não pode estar vazio")
     List<CategoryDTO> getCategories() {
+
         return categories;
     }
 }
