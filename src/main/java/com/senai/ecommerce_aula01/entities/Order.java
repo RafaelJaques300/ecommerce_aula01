@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
+
 @Data
 @Entity
 @Table(name = "tb_order")
@@ -13,7 +15,7 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
-    private Instant moment;
+    private LocalDateTime moment;
     private OrderStatus status;
 
     @ManyToOne
